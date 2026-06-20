@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Akash Suriya Narayanan — Chemical &amp; Process Engineer</title>
+<meta name="description" content="Akash Suriya Narayanan — Chemical & Process Engineer and MSc candidate at the University of Padova. Process design, simulation, and separation engineering." />
+<meta property="og:title" content="Akash Suriya Narayanan — Chemical & Process Engineer" />
+<meta property="og:description" content="Process design, simulation, and optimisation. MSc Chemical & Process Engineering, University of Padova." />
+<meta property="og:type" content="website" />
+
+<!-- Security hardening (static-site safe) -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; img-src 'self' data: https://akasheos.goatcounter.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://gc.zgo.at; connect-src 'self' https://akasheos.goatcounter.com">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ====================== TOKENS ====================== */
+:root{
+  --bg:#0A1E29; --bg-2:#0E2935; --bg-3:#143544;
+  --ink:#EAF2F3; --ink-dim:#9DB4BD; --ink-faint:#5E7A85;
+  --copper:#E89A5C; --copper-br:#F4B070;
+  --teal:#58C5C9; --teal-dim:#2E6E73;
+  --line:rgba(234,242,243,0.10); --line-2:rgba(234,242,243,0.18);
+  --grid:rgba(88,197,201,0.045);
+  --font-display:"Bricolage Grotesque",system-ui,sans-serif;
+  --font-body:"Hanken Grotesk",system-ui,sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,monospace;
+  --maxw:1180px; --ease:cubic-bezier(0.22,1,0.36,1);
+}
+/* ====================== BASE ====================== */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--ink);font-family:var(--font-body);
+  font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:46px 46px,46px 46px;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+section[id]{scroll-margin-top:88px}
+::selection{background:var(--copper);color:var(--bg)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:2px}
+
+/* justified prose */
+.lede,.section-head p,.about-body p,.tl-item .detail,.tl-item ul li,
+.proj-card .pc-body,.mini p,.beyond-card p,.carousel-cap p,.contact-card p,
+.cert-note,.gallery-intro{ text-align:justify; -webkit-hyphens:auto; hyphens:auto; }
+
+/* ====================== HELPERS ====================== */
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--teal);opacity:.6}
+.tag{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.section{padding:118px 0;position:relative}
+.section-head{margin-bottom:60px;max-width:760px}
+.section-head h2{font-family:var(--font-display);font-weight:800;font-size:clamp(2rem,5vw,3.4rem);line-height:1.02;letter-spacing:-0.02em;margin-top:18px}
+.section-head p{color:var(--ink-dim);margin-top:18px;font-size:1.07rem;max-width:620px}
+
+/* ====================== NAV ====================== */
+header.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,30,41,0.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .4s var(--ease),background .4s var(--ease)}
+header.nav.scrolled{border-bottom-color:var(--line);background:rgba(10,30,41,0.92)}
+.nav-inner{max-width:var(--maxw);margin:0 auto;padding:12px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand .ava{width:42px;height:42px;border-radius:50%;overflow:hidden;border:1.5px solid var(--copper);background:var(--bg-3);position:relative;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.brand .ava img{width:100%;height:100%;object-fit:cover}
+.brand .ava img.missing{display:none}
+.brand .ava span{position:absolute;font-family:var(--font-mono);font-weight:600;color:var(--copper);font-size:13px;display:none}
+.brand .ava img.missing ~ span{display:block}
+.brand .meta{display:flex;flex-direction:column;line-height:1.25}
+.brand .meta b{color:var(--ink);font-weight:600;font-size:14px}
+.brand .meta span{color:var(--ink-faint);font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase}
+.nav-links{display:flex;align-items:center;gap:2px}
+.nav-links a{font-family:var(--font-mono);font-size:12px;letter-spacing:.02em;color:var(--ink-dim);padding:8px 11px;border-radius:6px;transition:color .25s,background .25s}
+.nav-links a:hover{color:var(--ink);background:var(--bg-3)}
+.nav-links a.active{color:var(--copper)}
+.nav-cta{font-family:var(--font-mono);font-size:12px;border:1px solid var(--copper);color:var(--copper);padding:8px 14px;border-radius:7px;transition:background .25s,color .25s;margin-left:6px}
+.nav-cta:hover{background:var(--copper);color:var(--bg)}
+.burger{display:none;background:none;border:1px solid var(--line-2);border-radius:7px;width:42px;height:38px;cursor:pointer;flex-direction:column;gap:4px;align-items:center;justify-content:center}
+.burger span{display:block;width:18px;height:1.6px;background:var(--ink);transition:.3s}
+
+/* ====================== HERO ====================== */
+.hero{min-height:100svh;display:flex;align-items:center;padding:130px 0 80px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.12fr 0.88fr;gap:50px;align-items:center;width:100%}
+.hero-portrait{position:relative;width:140px;height:166px;border-radius:16px;overflow:hidden;background:var(--bg-2);border:1px solid var(--line-2);margin-bottom:26px}
+.hero-portrait::after{content:"";position:absolute;left:0;top:0;width:100%;height:3px;background:linear-gradient(90deg,var(--copper),var(--teal))}
+.hero-portrait img{width:100%;height:100%;object-fit:cover}
+.hero-portrait img.missing{display:none}
+.hero-portrait .ph{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--ink-faint)}
+.hero-portrait img.missing ~ .ph{display:flex}
+.hero-portrait .ph b{font-family:var(--font-mono);font-size:26px;color:var(--copper);font-weight:600}
+.hero-portrait .ph small{font-family:var(--font-mono);font-size:8.5px;letter-spacing:.04em;text-align:center;padding:0 8px;line-height:1.4}
+.hero-meta{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);display:flex;flex-wrap:wrap;gap:8px 20px;margin-bottom:22px}
+.hero-meta span{display:flex;align-items:center;gap:8px}
+.hero-meta span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--teal)}
+.hero h1{font-family:var(--font-display);font-weight:800;font-size:clamp(2.6rem,6.5vw,4.8rem);line-height:0.98;letter-spacing:-0.03em}
+.hero h1 .accent{color:var(--copper)}
+.hero .lede{margin-top:24px;font-size:1.14rem;line-height:1.6;color:var(--ink-dim);max-width:530px}
+.hero .lede b{color:var(--ink);font-weight:600}
+.hero-cta{display:flex;flex-wrap:wrap;gap:13px;margin-top:34px}
+.btn{font-family:var(--font-mono);font-size:13px;letter-spacing:.03em;padding:13px 22px;border-radius:9px;display:inline-flex;align-items:center;gap:10px;transition:transform .25s var(--ease),background .25s,color .25s,border-color .25s;cursor:pointer}
+.btn-primary{background:var(--copper);color:var(--bg);font-weight:600}
+.btn-primary:hover{background:var(--copper-br);transform:translateY(-2px)}
+.btn-ghost{border:1px solid var(--line-2);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--teal);color:var(--teal);transform:translateY(-2px)}
+.hero-stats{display:flex;gap:34px;margin-top:50px;flex-wrap:wrap}
+.hero-stats .stat .n{font-family:var(--font-display);font-weight:700;font-size:2.15rem;color:var(--ink);letter-spacing:-0.02em}
+.hero-stats .stat .n .u{color:var(--copper);font-size:1.35rem}
+.hero-stats .stat .l{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-top:4px;max-width:140px}
+/* big distillation column */
+.column-stage{position:relative;display:flex;justify-content:center;align-items:center}
+.column-svg{width:100%;max-width:390px;height:auto;overflow:visible}
+@keyframes riseVapor{0%{transform:translateY(0);opacity:0}12%{opacity:.9}88%{opacity:.9}100%{transform:translateY(-150px);opacity:0}}
+@keyframes fallLiquid{0%{transform:translateY(0);opacity:0}12%{opacity:.9}88%{opacity:.9}100%{transform:translateY(150px);opacity:0}}
+@keyframes flowRight{0%{transform:translateX(0);opacity:0}15%{opacity:1}85%{opacity:1}100%{transform:translateX(46px);opacity:0}}
+@keyframes pulseGlow{0%,100%{opacity:.35}50%{opacity:.85}}
+.vapor{animation:riseVapor 2.6s linear infinite}
+.liquid{animation:fallLiquid 3.1s linear infinite}
+.stream-flow{animation:flowRight 1.8s linear infinite}
+.glow{animation:pulseGlow 3s ease-in-out infinite}
+
+/* ====================== ABOUT ====================== */
+.about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:56px;align-items:start}
+.about-body p{margin-bottom:20px;color:var(--ink-dim);font-size:1.08rem}
+.about-body p b{color:var(--ink);font-weight:600}
+.quote{border-left:2px solid var(--copper);padding:6px 0 6px 24px;margin:34px 0;font-family:var(--font-display);font-weight:500;font-size:1.35rem;line-height:1.3;color:var(--ink)}
+.quote cite{display:block;font-family:var(--font-mono);font-size:12px;letter-spacing:.1em;color:var(--ink-faint);margin-top:12px;font-style:normal;text-transform:uppercase}
+.spec-card{background:var(--bg-2);border:1px solid var(--line);border-radius:14px;padding:28px}
+.spec-card h3{font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:20px}
+.spec-row{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px dashed var(--line);font-size:.96rem}
+.spec-row:last-child{border-bottom:0;padding-bottom:0}
+.spec-row .k{color:var(--ink-faint);font-family:var(--font-mono);font-size:12px;flex-shrink:0}
+.spec-row .v{color:var(--ink);text-align:right}
+.lang-bar{margin-top:8px}
+.lang-bar .lrow{display:flex;align-items:center;gap:12px;margin-bottom:12px;font-size:.92rem}
+.lang-bar .lname{width:64px;color:var(--ink);flex-shrink:0}
+.lang-bar .track{flex:1;height:5px;background:var(--bg-3);border-radius:3px;overflow:hidden}
+.lang-bar .fill{height:100%;background:linear-gradient(90deg,var(--teal-dim),var(--teal));border-radius:3px;width:0;transition:width 1.1s var(--ease)}
+.lang-bar .lvl{font-family:var(--font-mono);font-size:10.5px;color:var(--ink-faint);width:78px;text-align:right;flex-shrink:0;text-transform:uppercase;letter-spacing:.05em}
+
+/* ====================== TIMELINE ====================== */
+.timeline{position:relative;margin-top:10px}
+.timeline::before{content:"";position:absolute;left:21px;top:8px;bottom:8px;width:1px;background:linear-gradient(var(--teal-dim),var(--line),var(--teal-dim))}
+.tl-item{position:relative;padding:0 0 44px 64px}
+.tl-item:last-child{padding-bottom:0}
+.tl-node{position:absolute;left:6px;top:2px;width:32px;height:32px;border-radius:50%;background:var(--bg);border:1.5px solid var(--line-2);display:flex;align-items:center;justify-content:center}
+.tl-node::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--copper)}
+.tl-item .when{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.08em;color:var(--teal);text-transform:uppercase}
+.tl-item h3{font-family:var(--font-display);font-weight:700;font-size:1.4rem;margin-top:7px;letter-spacing:-0.01em}
+.tl-item .org{color:var(--ink-dim);font-size:1rem;margin-top:3px}
+.tl-item .org .loc{color:var(--ink-faint)}
+.tl-item .detail{color:var(--ink-dim);margin-top:14px;font-size:1rem}
+.tl-item ul{list-style:none;margin-top:14px;display:flex;flex-direction:column;gap:10px}
+.tl-item ul li{position:relative;padding-left:22px;color:var(--ink-dim);font-size:.98rem}
+.tl-item ul li::before{content:"›";position:absolute;left:2px;top:-1px;color:var(--copper);font-size:1.1rem}
+.tl-item ul li b{color:var(--ink);font-weight:600}
+.tl-item ul li .hl{color:var(--copper-br);font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.chip-sm{font-family:var(--font-mono);font-size:11px;color:var(--ink-dim);border:1px solid var(--line);padding:5px 11px;border-radius:20px;background:var(--bg-2)}
+.metric{display:inline-flex;align-items:baseline;gap:6px;color:var(--copper);font-family:var(--font-display);font-weight:700}
+
+/* ====================== PROJECTS ====================== */
+.proj-filter{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:40px}
+.proj-filter button{font-family:var(--font-mono);font-size:12px;cursor:pointer;background:var(--bg-2);border:1px solid var(--line);color:var(--ink-dim);padding:8px 15px;border-radius:8px;transition:.25s}
+.proj-filter button:hover{color:var(--ink);border-color:var(--line-2)}
+.proj-filter button.active{background:var(--copper);color:var(--bg);border-color:var(--copper);font-weight:600}
+.proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.proj-card{background:var(--bg-2);border:1px solid var(--line);border-radius:16px;padding:30px;position:relative;overflow:hidden;transition:transform .35s var(--ease),border-color .35s;display:flex;flex-direction:column}
+.proj-card::before{content:"";position:absolute;left:0;top:0;height:100%;width:3px;background:linear-gradient(var(--copper),var(--teal));opacity:0;transition:opacity .35s}
+.proj-card:hover{transform:translateY(-4px);border-color:var(--line-2)}
+.proj-card:hover::before{opacity:1}
+.proj-card .pc-top{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;margin-bottom:16px}
+.proj-card .pc-id{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;color:var(--teal)}
+.proj-card .pc-when{font-family:var(--font-mono);font-size:11px;color:var(--ink-faint);text-align:right;flex-shrink:0}
+.proj-card h3{font-family:var(--font-display);font-weight:700;font-size:1.35rem;line-height:1.15;letter-spacing:-0.01em}
+.proj-card .pc-org{font-family:var(--font-mono);font-size:11.5px;color:var(--ink-faint);margin-top:8px}
+.proj-card .pc-body{color:var(--ink-dim);margin-top:16px;font-size:.98rem;flex:1}
+.proj-card .pc-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px}
+.proj-card .pc-tags .t{font-family:var(--font-mono);font-size:10.5px;color:var(--teal);border:1px solid var(--teal-dim);border-radius:5px;padding:3px 8px}
+.proj-card .pc-win{margin-top:18px;font-family:var(--font-mono);font-size:12px;color:var(--copper);display:flex;align-items:center;gap:8px}
+.proj-card .pc-win::before{content:"▲";font-size:9px}
+.proj-card .pc-link{margin-top:18px;padding-top:16px;border-top:1px solid var(--line);font-family:var(--font-mono);font-size:12px;color:var(--teal);display:inline-flex;align-items:center;gap:8px;transition:color .25s,gap .25s}
+.proj-card .pc-link:hover{color:var(--copper);gap:11px}
+.proj-card .pc-link .ic{border:1px solid var(--teal-dim);border-radius:4px;font-size:9px;padding:2px 5px;letter-spacing:.05em}
+.proj-card .pc-link:hover .ic{border-color:var(--copper)}
+
+/* ====================== SKILLS ====================== */
+.skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.skill-block{background:var(--bg-2);border:1px solid var(--line);border-radius:16px;padding:30px}
+.skill-block .sb-head2{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.skill-block .sb-head2 .num{font-family:var(--font-mono);font-size:12px;color:var(--copper);border:1px solid var(--line-2);border-radius:6px;padding:4px 9px}
+.skill-block .sb-head2 h3{font-family:var(--font-display);font-weight:700;font-size:1.2rem}
+.skill-tags{display:flex;flex-wrap:wrap;gap:9px}
+.skill-tags .st{font-family:var(--font-mono);font-size:12px;color:var(--ink);background:var(--bg-3);border:1px solid var(--line);border-radius:8px;padding:8px 13px;transition:.25s}
+.skill-tags .st:hover{border-color:var(--teal);color:var(--teal)}
+.skill-tags .st.lead{border-color:var(--copper);color:var(--copper-br)}
+
+/* ====================== MINI GRIDS ====================== */
+.card-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.mini{background:var(--bg-2);border:1px solid var(--line);border-radius:13px;padding:22px 24px;transition:border-color .3s,transform .3s var(--ease)}
+.mini:hover{border-color:var(--line-2);transform:translateY(-3px)}
+.mini .m-when{font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;color:var(--teal)}
+.mini h4{font-family:var(--font-body);font-weight:600;font-size:1.05rem;margin-top:8px;color:var(--ink);line-height:1.3}
+.mini p{color:var(--ink-dim);font-size:.92rem;margin-top:6px}
+.mini .rank{font-family:var(--font-mono);font-size:11px;color:var(--copper);text-transform:uppercase;letter-spacing:.08em}
+
+/* ====================== GALLERY / CAROUSEL ====================== */
+.gallery-intro{color:var(--ink-dim);max-width:620px}
+.carousel{position:relative;margin-top:8px;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--bg-2)}
+.carousel-track{display:flex;transition:transform .5s var(--ease)}
+.slide{min-width:100%;position:relative}
+.slide .frame{position:relative;width:100%;aspect-ratio:16/9;background:var(--bg-3);overflow:hidden}
+.slide .frame img{width:100%;height:100%;object-fit:cover}
+.slide .frame img.missing{display:none}
+.slide .frame .ph{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--ink-faint)}
+.slide .frame img.missing ~ .ph{display:flex}
+.slide .frame .ph .ic{font-family:var(--font-mono);font-size:30px;color:var(--teal-dim)}
+.slide .frame .ph small{font-family:var(--font-mono);font-size:11px;letter-spacing:.05em}
+.carousel-cap{padding:20px 24px;border-top:1px solid var(--line)}
+.carousel-cap .ix{font-family:var(--font-mono);font-size:11px;color:var(--teal);letter-spacing:.08em}
+.carousel-cap p{color:var(--ink-dim);font-size:1rem;margin-top:6px}
+.car-btn{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;background:rgba(10,30,41,0.78);border:1px solid var(--line-2);color:var(--ink);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.25s;backdrop-filter:blur(6px);z-index:3}
+.car-btn:hover{border-color:var(--copper);color:var(--copper)}
+.car-prev{left:16px} .car-next{right:16px}
+.car-dots{display:flex;gap:9px;justify-content:center;margin-top:20px}
+.car-dots button{width:9px;height:9px;border-radius:50%;border:0;background:var(--bg-3);cursor:pointer;padding:0;transition:.25s}
+.car-dots button.active{background:var(--copper);transform:scale(1.25)}
+.cert-note{color:var(--ink-faint);font-family:var(--font-mono);font-size:12px;margin:54px 0 22px;display:flex;align-items:center;gap:12px}
+.cert-note::before{content:"";flex:0 0 26px;height:1px;background:var(--teal);opacity:.6}
+.cert-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.cert{display:flex;align-items:center;gap:16px;background:var(--bg-2);border:1px solid var(--line);border-radius:13px;padding:18px 20px;transition:border-color .3s,transform .3s var(--ease)}
+.cert:hover{border-color:var(--copper);transform:translateY(-2px)}
+.cert .doc{flex:0 0 42px;height:50px;border:1px solid var(--line-2);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:9px;color:var(--teal)}
+.cert .meta{flex:1;min-width:0}
+.cert .meta h4{font-family:var(--font-body);font-weight:600;font-size:.98rem;line-height:1.25}
+.cert .meta span{font-family:var(--font-mono);font-size:10.5px;color:var(--ink-faint)}
+.cert .go{font-family:var(--font-mono);font-size:11px;color:var(--copper);flex-shrink:0}
+
+/* ====================== BEYOND ====================== */
+.beyond-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.beyond-card{background:var(--bg-2);border:1px solid var(--line);border-radius:16px;padding:30px}
+.beyond-card h3{font-family:var(--font-display);font-weight:700;font-size:1.25rem;margin-bottom:8px}
+.beyond-card .sub{font-family:var(--font-mono);font-size:11.5px;color:var(--teal);letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px}
+.beyond-card p{color:var(--ink-dim);font-size:1rem}
+.interest-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.interest-row .ir{font-family:var(--font-mono);font-size:12px;color:var(--ink);border:1px solid var(--line);border-radius:20px;padding:6px 14px}
+
+/* ====================== CONTACT ====================== */
+.contact{padding:118px 0 0}
+.contact-card{background:linear-gradient(150deg,var(--bg-2),var(--bg-3));border:1px solid var(--line);border-radius:24px;padding:64px 56px;text-align:center;position:relative;overflow:hidden}
+.contact-card h2{font-family:var(--font-display);font-weight:800;font-size:clamp(2rem,5vw,3.2rem);letter-spacing:-0.02em;line-height:1.02}
+.contact-card h2 .accent{color:var(--copper)}
+.contact-card p{color:var(--ink-dim);margin:18px auto 0;font-size:1.1rem;max-width:520px;text-align:center}
+.contact-actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:34px}
+.contact-meta{display:flex;flex-wrap:wrap;gap:14px 40px;justify-content:center;margin-top:44px;padding-top:34px;border-top:1px solid var(--line)}
+.contact-meta a,.contact-meta span{font-family:var(--font-mono);font-size:13px;color:var(--ink-dim);display:flex;align-items:center;gap:9px;transition:color .25s}
+.contact-meta a:hover{color:var(--copper)}
+.docs-note{margin-top:30px;font-family:var(--font-mono);font-size:11.5px;color:var(--ink-faint);display:flex;flex-wrap:wrap;gap:10px 18px;justify-content:center}
+.docs-note a{color:var(--teal);border-bottom:1px dashed var(--teal-dim)}
+footer.foot{padding:60px 0 50px;margin-top:90px;border-top:1px solid var(--line)}
+.foot-inner{display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px;align-items:center}
+.foot-inner .copy{font-family:var(--font-mono);font-size:11.5px;color:var(--ink-faint);line-height:1.7;max-width:560px}
+.foot-inner .up{font-family:var(--font-mono);font-size:12px;color:var(--ink-dim);border:1px solid var(--line-2);padding:9px 16px;border-radius:8px;transition:.25s}
+.foot-inner .up:hover{border-color:var(--copper);color:var(--copper)}
+
+/* ====================== REVEAL ====================== */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
+
+/* ====================== RESPONSIVE ====================== */
+@media(max-width:1180px){
+  .nav-links{position:fixed;inset:62px 0 auto 0;background:var(--bg-2);flex-direction:column;align-items:stretch;gap:0;padding:10px 18px 18px;border-bottom:1px solid var(--line);transform:translateY(-130%);transition:transform .4s var(--ease)}
+  .nav-links.open{transform:translateY(0)}
+  .nav-links a{padding:13px 6px;border-bottom:1px solid var(--line);font-size:14px}
+  .nav-cta{display:none}
+  .burger{display:flex}
+}
+@media(max-width:960px){
+  .hero-grid{grid-template-columns:1fr;gap:18px}
+  .column-stage{order:-1}
+  .column-svg{max-width:300px}
+  .about-grid{grid-template-columns:1fr;gap:36px}
+  .proj-grid,.skills-grid,.card-grid,.cert-grid,.beyond-grid{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  body{font-size:16px}.wrap{padding:0 20px}.section{padding:84px 0}
+  .contact-card{padding:44px 26px}.hero{padding:118px 0 60px}.hero-stats{gap:24px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none !important}html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}.carousel-track{transition:none}
+}
+</style>
+<!-- Analytics: GoatCounter (cookie-free, no consent banner needed) -->
+<script data-goatcounter="https://akasheos.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+
+<!-- ====================== NAV ====================== -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand" aria-label="Akash Suriya Narayanan — home">
+      <span class="ava">
+        <img src="assets/img/akash.png" alt="Akash Suriya Narayanan" onerror="this.classList.add('missing')">
+        <span>AS</span>
+      </span>
+      <span class="meta"><b>Akash Suriya Narayanan</b><span>Chemical &amp; Process Eng.</span></span>
+    </a>
+    <nav class="nav-links" id="navlinks" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#recognition">Recognition</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#beyond">Beyond</a>
+      <a href="#contact" class="nav-cta">Get in touch</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ====================== HERO ====================== -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <div class="hero-portrait">
+        <img src="assets/img/akash.png" alt="Portrait of Akash Suriya Narayanan" onerror="this.classList.add('missing')">
+        <div class="ph"><b>AS</b><small>add assets/img/akash.png</small></div>
+      </div>
+      <div class="hero-meta">
+        <span>From Chennai, in Padova</span>
+        <span>MSc · University of Padova</span>
+        <span>Open to 2026 roles</span>
+      </div>
+      <h1>I design the <span class="accent">separation</span> between idea and product.</h1>
+      <p class="lede">Chemical &amp; process engineer with <b>two years of plant-floor experience</b> and an MSc in progress at Padova. I work where the flowsheet meets reality — <b>distillation and separation trains in Aspen Plus</b>, CFD in ANSYS Fluent, and lean lines that run measurably faster.</p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">View selected work →</a>
+        <a href="assets/docs/Akash-CV.pdf" class="btn btn-ghost" target="_blank" rel="noopener">Download CV</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="n">2<span class="u">yr</span></div><div class="l">Industry process engineering</div></div>
+        <div class="stat"><div class="n">7+</div><div class="l">Simulation &amp; design tools</div></div>
+      </div>
+    </div>
+    <div class="column-stage">
+      <svg class="column-svg" viewBox="0 0 300 440" role="img" aria-label="Stylised distillation column with vapour rising, liquid descending, and feed, distillate and bottoms streams.">
+        <defs>
+          <linearGradient id="shell" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0E2935"/><stop offset="0.5" stop-color="#1A4252"/><stop offset="1" stop-color="#0E2935"/></linearGradient>
+          <linearGradient id="copperG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F4B070"/><stop offset="1" stop-color="#E89A5C"/></linearGradient>
+        </defs>
+        <rect x="118" y="14" width="64" height="22" rx="5" fill="none" stroke="#58C5C9" stroke-width="1.6"/>
+        <path d="M124 25 h52 M124 20 q6 5 12 0 q6 -5 12 0 q6 5 12 0 q6 -5 12 0" fill="none" stroke="#58C5C9" stroke-width="1.2" opacity="0.8"/>
+        <line x1="150" y1="36" x2="150" y2="58" stroke="rgba(234,242,243,0.18)" stroke-width="1.4"/>
+        <rect x="110" y="58" width="80" height="300" rx="40" fill="url(#shell)" stroke="rgba(234,242,243,0.18)" stroke-width="1.6"/>
+        <g stroke="#3C6675" stroke-width="1.3" opacity="0.9">
+          <line x1="116" y1="100" x2="184" y2="100"/><line x1="116" y1="140" x2="184" y2="140"/><line x1="116" y1="180" x2="184" y2="180"/>
+          <line x1="116" y1="220" x2="184" y2="220"/><line x1="116" y1="260" x2="184" y2="260"/><line x1="116" y1="300" x2="184" y2="300"/>
+        </g>
+        <g fill="url(#copperG)">
+          <circle class="vapor" cx="138" cy="320" r="3.4" style="animation-delay:0s"/><circle class="vapor" cx="162" cy="320" r="3" style="animation-delay:.7s"/>
+          <circle class="vapor" cx="150" cy="320" r="3.2" style="animation-delay:1.3s"/><circle class="vapor" cx="146" cy="320" r="2.6" style="animation-delay:2s"/>
+        </g>
+        <g fill="#58C5C9">
+          <circle class="liquid" cx="128" cy="100" r="2.6" style="animation-delay:.4s"/><circle class="liquid" cx="172" cy="100" r="2.6" style="animation-delay:1.1s"/><circle class="liquid" cx="150" cy="100" r="2.4" style="animation-delay:1.8s"/>
+        </g>
+        <line x1="60" y1="208" x2="110" y2="208" stroke="rgba(234,242,243,0.18)" stroke-width="1.4"/>
+        <polygon points="110,208 103,204 103,212" fill="#9DB4BD"/>
+        <g fill="#F4B070"><circle class="stream-flow" cx="64" cy="208" r="2.4"/></g>
+        <text x="58" y="200" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9" fill="#5E7A85">FEED</text>
+        <line x1="190" y1="25" x2="240" y2="25" stroke="rgba(234,242,243,0.18)" stroke-width="1.4"/>
+        <polygon points="240,25 233,21 233,29" fill="#9DB4BD"/>
+        <text x="244" y="29" font-family="IBM Plex Mono, monospace" font-size="9" fill="#5E7A85">DISTILLATE</text>
+        <line x1="150" y1="358" x2="150" y2="380" stroke="rgba(234,242,243,0.18)" stroke-width="1.4"/>
+        <circle cx="150" cy="398" r="20" fill="none" stroke="#E89A5C" stroke-width="1.6"/>
+        <path d="M138 398 q6 -8 12 0 q6 8 12 0" fill="none" stroke="#E89A5C" stroke-width="1.3" class="glow"/>
+        <line x1="170" y1="398" x2="240" y2="398" stroke="rgba(234,242,243,0.18)" stroke-width="1.4"/>
+        <polygon points="240,398 233,394 233,402" fill="#9DB4BD"/>
+        <text x="244" y="402" font-family="IBM Plex Mono, monospace" font-size="9" fill="#5E7A85">BOTTOMS</text>
+        <circle cx="60" cy="80" r="17" fill="none" stroke="#58C5C9" stroke-width="1.2"/>
+        <text x="60" y="84" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8" fill="#58C5C9">PT</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== ABOUT ====================== -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="section-head reveal"><div class="eyebrow">PI-00 · Introduction</div><h2>An engineer who treats good processes as a craft.</h2></div>
+    <div class="about-grid">
+      <div class="about-body reveal">
+        <p>I'm Akash — a chemical and process engineer who likes problems that sit between the theoretical and the physical. A column that won't converge, a line that bottlenecks at one station, a duct that drops more pressure than it should. The interesting work is in closing the gap between what the model says and what the plant actually does.</p>
+        <p>Originally from <b>Chennai, India</b> and now based in <b>Padova, Italy</b>, I spent <b>two years at Carborundum Universal (CUMI)</b> turning that instinct into measured results — lifting hot-press wheel production by 150%, mapping value streams, and building the dashboards that let three sites finally see their own numbers. Now I'm at the <b>University of Padova</b> for an MSc, working across process design, separation systems, and machine learning for process engineers.</p>
+        <p>I care about <b>sustainability and rigour in equal measure</b> — knowing precisely which number a method supports, and which is an extrapolation. That habit of checking my own assumptions is the part of engineering I enjoy most.</p>
+        <blockquote class="quote">“What I cannot create, I cannot understand.”<cite>— Richard Feynman · a principle I build by</cite></blockquote>
+      </div>
+      <aside class="spec-card reveal d1" aria-label="Quick facts">
+        <h3>At a glance</h3>
+        <div class="spec-row"><span class="k">FROM</span><span class="v">Chennai, India</span></div>
+        <div class="spec-row"><span class="k">BASED IN</span><span class="v">Padova, Italy</span></div>
+        <div class="spec-row"><span class="k">ROLE</span><span class="v">MSc Candidate · Process Eng.</span></div>
+        <div class="spec-row"><span class="k">FOCUS</span><span class="v">Design · Simulation · Separation</span></div>
+        <div class="spec-row"><span class="k">GRAD</span><span class="v">December 2026</span></div>
+        <div class="spec-row"><span class="k">STATUS</span><span class="v">Open to work in the EU</span></div>
+        <h3 style="margin-top:28px">Languages</h3>
+        <div class="lang-bar">
+          <div class="lrow"><span class="lname">English</span><span class="track"><span class="fill" data-w="92%"></span></span><span class="lvl">Professional</span></div>
+          <div class="lrow"><span class="lname">Tamil</span><span class="track"><span class="fill" data-w="100%"></span></span><span class="lvl">Native</span></div>
+          <div class="lrow"><span class="lname">Hindi</span><span class="track"><span class="fill" data-w="40%"></span></span><span class="lvl">Basic</span></div>
+          <div class="lrow"><span class="lname">Italian</span><span class="track"><span class="fill" data-w="25%"></span></span><span class="lvl">Learning</span></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== EDUCATION ====================== -->
+<section class="section" id="education">
+  <div class="wrap">
+    <div class="section-head reveal"><div class="eyebrow">ED-01 · Academic feed</div><h2>Education</h2><p>From foundations in Tamil Nadu to advanced process design in Padova — with a European decarbonisation programme along the way.</p></div>
+    <div class="timeline">
+      <article class="tl-item reveal">
+        <div class="tl-node"></div><div class="when">2024 — Dec 2026 · Expected</div>
+        <h3>MSc — Chemical &amp; Process Engineering</h3>
+        <div class="org">University of Padova <span class="loc">· Padova, Italy</span></div>
+        <p class="detail">Advanced coursework across the modern process-engineering toolkit:</p>
+        <div class="chips">
+          <span class="chip-sm">Multiphase Thermodynamics</span><span class="chip-sm">Separation Unit Operations</span><span class="chip-sm">Process Design</span><span class="chip-sm">Industrial Chemical Processes</span><span class="chip-sm">Chemical Reaction Engineering</span><span class="chip-sm">Environmental Management</span><span class="chip-sm">Safety &amp; Hazard Analysis</span><span class="chip-sm">Process Economics</span><span class="chip-sm">ML for Process Engineers</span>
+        </div>
+      </article>
+      <article class="tl-item reveal">
+        <div class="tl-node"></div><div class="when">Aug 2022 · Graduated</div>
+        <h3>BTech — Chemical Engineering</h3>
+        <div class="org">SASTRA Deemed to be University <span class="loc">· Thanjavur, India</span></div>
+        <p class="detail">CGPA <span class="metric">8.01<span style="font-size:.7em">/10</span></span> · Chaired the IIChE Students' Chapter and ran the chapter's flagship technical events.</p>
+        <div class="chips">
+          <span class="chip-sm">Transport Phenomena</span><span class="chip-sm">Mass Transfer</span><span class="chip-sm">Heat Transfer</span><span class="chip-sm">Environmental Engineering</span>
+        </div>
+      </article>
+      <article class="tl-item reveal">
+        <div class="tl-node"></div><div class="when">2016 — 2018</div>
+        <h3>Higher &amp; Secondary School</h3>
+        <div class="org">New Prince Matriculation Higher Secondary School <span class="loc">· Tamil Nadu, India</span></div>
+        <p class="detail">Grade 12 — <span class="metric">88.91%</span> &nbsp;·&nbsp; Grade 10 — <span class="metric">94.21%</span></p>
+      </article>
+    </div>
+    <article class="tl-item reveal" style="margin-top:48px">
+      <div class="tl-node" style="border-color:var(--copper)"></div>
+      <div class="when" style="color:var(--copper)">May 2025 · Erasmus+ BIP</div>
+      <h3>Decarbonisation Strategies — International Programme</h3>
+      <div class="org">Hochschule Kaiserslautern <span class="loc">· Kaiserslautern, Germany</span></div>
+      <ul>
+        <li>Designed and simulated an <b>MVR distillation column for ethanol purification</b> in Aspen Plus as part of an international team (Padova, Valladolid, UPC Barcelona, Turku, Kaiserslautern).</li>
+        <li>Presented simulation results, completed hands-on lab assignments, and attended a technical lecture by <b>Sulzer</b>.</li>
+        <li>Toured the <b>BASF Ludwigshafen Verbund</b> site and <span class="hl">Berkel AHK Alkoholhandel GmbH</span> for first-hand industrial insight into sustainable chemical processes and the alcohol trade.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- ====================== EXPERIENCE ====================== -->
+<section class="section" id="experience">
+  <div class="wrap">
+    <div class="section-head reveal"><div class="eyebrow">EX-02 · Operating history</div><h2>Experience</h2><p>Where the engineering left the screen and changed a real production number.</p></div>
+    <div class="timeline">
+      <article class="tl-item reveal">
+        <div class="tl-node"></div><div class="when">Aug 2022 — Aug 2024</div>
+        <h3>Executive — Process Engineering</h3>
+        <div class="org">Carborundum Universal Limited (CUMI) <span class="loc">· India</span></div>
+        <p class="detail">A materials-science leader in abrasives, ceramics, electro-minerals and super-refractories.</p>
+        <ul>
+          <li>Boosted production of hot-press snagging wheels by <b>150%</b> — the highest recorded output — through targeted process-optimisation initiatives.</li>
+          <li>Led the VSM-based optimisation of hot-pressed snagging wheels, increasing throughput by <b>75%</b>.</li>
+          <li>Secured Senior Leadership approval for <b>multi-million-euro CAPEX projects</b> through full technical and financial cases.</li>
+          <li>Built automated, interactive <b>Power BI dashboards</b> integrating ERP data across three manufacturing units.</li>
+          <li>Expanded the hot-pressed wheel product portfolio using Quality Function Deployment (QFD).</li>
+        </ul>
+        <div class="chips"><span class="chip-sm">VSM</span><span class="chip-sm">OEE / MCE</span><span class="chip-sm">CAPEX</span><span class="chip-sm">Power BI</span><span class="chip-sm">QFD</span><span class="chip-sm">Kaizen</span></div>
+      </article>
+      <article class="tl-item reveal">
+        <div class="tl-node"></div><div class="when">Aug 2020 — Aug 2022</div>
+        <h3>Chairperson → Executive Member, IIChE Students' Chapter</h3>
+        <div class="org">SASTRA Deemed to be University <span class="loc">· Thanjavur, India</span></div>
+        <ul>
+          <li>Chaired the chapter; organised the annual Engineers' Day function and the chapter's technical events.</li>
+          <li>Arranged a guest lecture in honour of <b>Prof. Scott H. Fogler</b> (University of Michigan).</li>
+          <li>Designed posters and certificates for the national CAPE conference; co-ran the Alumni G-meet series.</li>
+        </ul>
+      </article>
+      <article class="tl-item reveal">
+        <div class="tl-node"></div><div class="when">2019 — 2020 · Internships</div>
+        <h3>Early industry &amp; quality training</h3>
+        <div class="org">Anexas Europe · Manali Petrochemicals · CIPET</div>
+        <ul>
+          <li><b>Lean &amp; Six Sigma Intern</b> (IIChE × Anexas Europe) — improved PET production efficiency using Minitab; evaluated by European consulting experts.</li>
+          <li><b>In-plant training, Manali Petrochemicals</b> — observed ethylene-glycol unit operations and technical-service functions.</li>
+          <li><b>In-plant training, CIPET</b> — surveyed polymer processing machinery and property testing.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== PROJECTS ====================== -->
+<section class="section" id="projects">
+  <div class="wrap">
+    <div class="section-head reveal"><div class="eyebrow">PR-03 · Unit operations</div><h2>Selected projects</h2><p>Process design, CFD, lean manufacturing and the code that ties data together. Each card links to its abstract. Filter by discipline.</p></div>
+    <div class="proj-filter reveal" id="projFilter">
+      <button class="active" data-f="all">All</button><button data-f="design">Process Design</button><button data-f="cfd">CFD</button><button data-f="lean">Lean / Data</button><button data-f="code">Programming</button>
+    </div>
+    <div class="proj-grid" id="projGrid">
+      <article class="proj-card reveal" data-cat="design">
+        <div class="pc-top"><span class="pc-id">P-01</span><span class="pc-when">Sep 2025 — Feb 2026</span></div>
+        <h3>IBPE Plant — Conceptual Design &amp; Simulation</h3>
+        <div class="pc-org">MSc Process Design · University of Padova</div>
+        <p class="pc-body">Technical and economic feasibility of a continuous process producing 1-(4-isobutylphenyl)ethanol at 5,000 t/yr and 99.9% molar purity, using hierarchical conceptual design. Optimised reactor conversion (50%) and hydrogen purge (70%) to prevent methane build-up; designed a three-column distillation train; closed with a full cash-flow and profitability analysis.</p>
+        <div class="pc-tags"><span class="t">Aspen Plus</span><span class="t">Distillation</span><span class="t">CSTR</span><span class="t">Techno-economics</span></div>
+        <div class="pc-win">99.9% molar purity · recommended for detailed design</div>
+        <a class="pc-link" href="assets/docs/abstracts/p01-ibpe.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span> Read abstract ↗</a>
+      </article>
+      <article class="proj-card reveal" data-cat="design">
+        <div class="pc-top"><span class="pc-id">P-02</span><span class="pc-when">May 2025</span></div>
+        <h3>MVR Distillation Column — Ethanol Purification</h3>
+        <div class="pc-org">Erasmus+ BIP · Hochschule Kaiserslautern</div>
+        <p class="pc-body">International team design of a mechanical-vapour-recompression distillation column for ethanol purification in Aspen Plus, presented alongside hands-on lab work and industrial visits to BASF Ludwigshafen and Berkel AHK.</p>
+        <div class="pc-tags"><span class="t">Aspen Plus</span><span class="t">MVR</span><span class="t">Energy integration</span></div>
+        <div class="pc-win">Cross-university team deliverable</div>
+        <a class="pc-link" href="assets/docs/abstracts/p02-mvr-ethanol.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span> Read abstract ↗</a>
+      </article>
+      <article class="proj-card reveal" data-cat="lean">
+        <div class="pc-top"><span class="pc-id">P-03</span><span class="pc-when">Aug 2022 — May 2023</span></div>
+        <h3>Hot-Pressed Snagging Wheels — Optimisation via VSM</h3>
+        <div class="pc-org">Carborundum Universal Limited (CUMI)</div>
+        <p class="pc-body">Calculated OEE and Manufacturing Cycle Efficiency across the line, mapped value streams to find bottlenecks, then implemented targeted kaizens that cut downtime and raised output.</p>
+        <div class="pc-tags"><span class="t">VSM</span><span class="t">OEE</span><span class="t">Kaizen</span><span class="t">Lean</span></div>
+        <div class="pc-win">+75% production throughput</div>
+        
+      </article>
+      <article class="proj-card reveal" data-cat="lean code">
+        <div class="pc-top"><span class="pc-id">P-04</span><span class="pc-when">Sep 2023 — May 2024</span></div>
+        <h3>Automated Power BI Dashboard — Multi-Site Ops</h3>
+        <div class="pc-org">Carborundum Universal Limited (CUMI)</div>
+        <p class="pc-body">Turned disorganised ERP exports into an interactive Power BI dashboard, engineering Excel macros for automated data organisation and a relationship master file. Delivered SKU-level insight, deployed across multiple business locations.</p>
+        <div class="pc-tags"><span class="t">Power BI</span><span class="t">Excel VBA</span><span class="t">ERP</span><span class="t">Data modelling</span></div>
+        <div class="pc-win">Deployed across 3 manufacturing units</div>
+        
+      </article>
+      <article class="proj-card reveal" data-cat="cfd">
+        <div class="pc-top"><span class="pc-id">P-05</span><span class="pc-when">Aug — Dec 2021</span></div>
+        <h3>CFD — Flow Through Single-Holed Orifices in Series</h3>
+        <div class="pc-org">BTech Research · SASTRA University</div>
+        <p class="pc-body">Numerically estimated pressure drop across orifice meters and studied how configuration affects the discharge coefficient in ANSYS Fluent. Validated against experimental data, compared steady-state vs transient runs, and flagged cavitation risk from minimum-pressure profiles. Presented at SCHEMCON 2021.</p>
+        <div class="pc-tags"><span class="t">ANSYS Fluent</span><span class="t">CFD</span><span class="t">Cavitation</span><span class="t">Validation</span></div>
+        <div class="pc-win">Paper presented · SCHEMCON 2021</div>
+        <a class="pc-link" href="assets/docs/abstracts/p05-cfd-orifice.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span> Read abstract ↗</a>
+      </article>
+      <article class="proj-card reveal" data-cat="cfd">
+        <div class="pc-top"><span class="pc-id">P-06</span><span class="pc-when">May — Sep 2021</span></div>
+        <h3>Ducting Network Design Optimisation via CFD</h3>
+        <div class="pc-org">BTech Research · SASTRA University</div>
+        <p class="pc-body">Reconstructed ducting geometry from engineering drawings, validated pressure drop against industrial data, then evaluated geometric modifications — plus an erosion study and cost estimation proving the economic case for the redesign.</p>
+        <div class="pc-tags"><span class="t">ANSYS Fluent</span><span class="t">Erosion</span><span class="t">Cost analysis</span></div>
+        <div class="pc-win">−72% pressure drop on modified geometry</div>
+        <a class="pc-link" href="assets/docs/abstracts/p06-cfd-ducting.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span> Read abstract ↗</a>
+      </article>
+      <article class="proj-card reveal" data-cat="lean code">
+        <div class="pc-top"><span class="pc-id">P-07</span><span class="pc-when">Mar — Jul 2022</span></div>
+        <h3>Boiler Efficiency Modelling — Safety &amp; Waste Study</h3>
+        <div class="pc-org">CORI · BTech Final-Year Project</div>
+        <p class="pc-body">Built an Excel tool computing boiler efficiency from operational data with sensitivity and error analysis, plus a preliminary HAZOP for the curing division and an SOP for the softener plant.</p>
+        <div class="pc-tags"><span class="t">Excel</span><span class="t">HAZOP</span><span class="t">Sensitivity analysis</span></div>
+        <div class="pc-win">Safety + efficiency in one deliverable</div>
+        <a class="pc-link" href="assets/docs/abstracts/p07-boiler-hazop.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span> Read abstract ↗</a>
+      </article>
+      <article class="proj-card reveal" data-cat="code">
+        <div class="pc-top"><span class="pc-id">P-08</span><span class="pc-when">Aug — Oct 2019</span></div>
+        <h3>Particle-Size Distribution Analyser (C++)</h3>
+        <div class="pc-org">BTech Research · SASTRA University</div>
+        <p class="pc-body">A C++ program using least-squares regression to fit size-distribution equations, with three modules converting mass-fraction data into any particle-size distribution fraction.</p>
+        <div class="pc-tags"><span class="t">C++</span><span class="t">Least squares</span><span class="t">Numerical methods</span></div>
+        <div class="pc-win">Reusable analysis toolkit</div>
+        <a class="pc-link" href="assets/docs/abstracts/p08-psd-cpp.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span> Read abstract ↗</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== SKILLS ====================== -->
+<section class="section" id="skills">
+  <div class="wrap">
+    <div class="section-head reveal"><div class="eyebrow">SK-04 · Instrument list</div><h2>Technical skills</h2><p>Tools I reach for, grouped by what they're for. Highlighted items are the ones I lean on most.</p></div>
+    <div class="skills-grid">
+      <div class="skill-block reveal"><div class="sb-head2"><span class="num">01</span><h3>Simulation &amp; Design</h3></div><div class="skill-tags"><span class="st lead">Aspen Plus</span><span class="st lead">ANSYS Fluent</span><span class="st">Pro/II</span><span class="st">DWSIM</span><span class="st">OpenModelica</span><span class="st">SuperPro</span><span class="st">SolidWorks</span><span class="st">CATIA</span><span class="st">AutoCAD</span></div></div>
+      <div class="skill-block reveal d1"><div class="sb-head2"><span class="num">02</span><h3>Programming &amp; Scripting</h3></div><div class="skill-tags"><span class="st lead">Excel VBA</span><span class="st">C</span><span class="st">C++</span><span class="st">MATLAB</span><span class="st">Scilab</span></div></div>
+      <div class="skill-block reveal"><div class="sb-head2"><span class="num">03</span><h3>Data &amp; Analytics</h3></div><div class="skill-tags"><span class="st lead">Power BI</span><span class="st lead">Excel (advanced)</span><span class="st">Minitab</span></div></div>
+      <div class="skill-block reveal d1"><div class="sb-head2"><span class="num">04</span><h3>Quality &amp; Lean Methods</h3></div><div class="skill-tags"><span class="st lead">VSM</span><span class="st">Six Sigma (Yellow Belt)</span><span class="st">QFD</span><span class="st">DOE</span><span class="st">HAZOP</span><span class="st">7 QC Tools</span><span class="st">Design Thinking</span></div></div>
+      <div class="skill-block reveal" style="grid-column:1/-1"><div class="sb-head2"><span class="num">05</span><h3>Creative &amp; Productivity</h3></div><div class="skill-tags"><span class="st">Adobe Illustrator</span><span class="st">Adobe Photoshop</span><span class="st">Premiere Pro</span><span class="st">PowerPoint</span><span class="st">Word</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== RECOGNITION ====================== -->
+<section class="section" id="recognition">
+  <div class="wrap">
+    <div class="section-head reveal"><div class="eyebrow">RC-05 · Verified output</div><h2>Recognition</h2><p>Awards earned and the rooms where I've presented. Certificates and proof live in the Gallery.</p></div>
+    <h3 class="tag reveal" style="margin-bottom:18px">Awards</h3>
+    <div class="card-grid" style="margin-bottom:54px">
+      <div class="mini reveal"><div class="m-when">May 2024</div><h4>Star of the Quarter</h4><p>Carborundum Universal Limited</p></div>
+      <div class="mini reveal d1"><div class="rank">1st Prize</div><h4>Theme Video Making — CUFEST 2022</h4><p>CUMI · Nov 2022</p></div>
+      <div class="mini reveal"><div class="rank">1st Prize</div><h4>Industrivia — Siphon 7.0</h4><p>SVNIT Surat · Mar 2022</p></div>
+      <div class="mini reveal d1"><div class="rank">1st Prize</div><h4>Shipwreck — STEER</h4><p>SSN Chennai · Mar 2022</p></div>
+      <div class="mini reveal"><div class="rank">2nd Prize</div><h4>Paper Presentation — ChemIgnite</h4><p>Manipal University · Nov 2021</p></div>
+      <div class="mini reveal d1"><div class="rank">2nd Prize</div><h4>Technical Events — SSN Invente</h4><p>SSN · Aug 2021</p></div>
+      <div class="mini reveal"><div class="rank">1st Place</div><h4>Dr. Abdul Kalam Memorial Young Scientist Award</h4><p>Bio-Informatics · Oct 2016</p></div>
+    </div>
+    <h3 class="tag reveal" style="margin-bottom:18px">Conferences &amp; workshops</h3>
+    <div class="card-grid">
+      <div class="mini reveal"><div class="m-when">Sep 2021</div><h4>SCHEMCON 2021 — CFD Simulation paper</h4><p>Indian Institute of Chemical Engineers</p></div>
+      <div class="mini reveal d1"><div class="m-when">Jun 2023</div><h4>Quality Function Deployment workshop</h4><p>Lead Training Solutions</p></div>
+      <div class="mini reveal"><div class="m-when">Apr 2023</div><h4>Design of Experiments (DOE) workshop</h4><p>Confederation of Indian Industry</p></div>
+      <div class="mini reveal d1"><div class="m-when">Dec 2022</div><h4>Value Stream Mapping — two-day workshop</h4><p>Confederation of Indian Industry</p></div>
+      <div class="mini reveal"><div class="m-when">Feb 2023</div><h4>Design Thinking workshop</h4><p>Lead Training</p></div>
+      <div class="mini reveal d1"><div class="m-when">Mar 2021</div><h4>DWSIM &amp; OpenModelica workshops</h4><p>IIChE SASTRA</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== GALLERY ====================== -->
+<section class="section" id="gallery">
+  <div class="wrap">
+    <div class="section-head reveal"><div class="eyebrow">GL-06 · Field gallery</div><h2>Gallery &amp; certificates</h2><p class="gallery-intro">Moments from labs, plant visits and project work — and the certificates behind the credentials, attached as PDFs.</p></div>
+    <div class="carousel reveal" id="carousel" aria-roledescription="carousel">
+      <button class="car-btn car-prev" id="carPrev" aria-label="Previous slide">‹</button>
+      <button class="car-btn car-next" id="carNext" aria-label="Next slide">›</button>
+      <div class="carousel-track" id="carTrack">
+        <div class="slide"><div class="frame"><img src="assets/img/gallery-1.jpg" alt="Trekking during the Erasmus+ BIP in Kaiserslautern, Germany" onerror="this.classList.add('missing')"><div class="ph"><span class="ic">[ IMG ]</span><small>assets/img/gallery-1.jpg</small></div></div></div>
+        <div class="slide"><div class="frame"><img src="assets/img/gallery-2.jpg" alt="Industrial visit to the BASF Ludwigshafen Verbund site" onerror="this.classList.add('missing')"><div class="ph"><span class="ic">[ IMG ]</span><small>assets/img/gallery-2.jpg</small></div></div></div>
+        <div class="slide"><div class="frame"><img src="assets/img/gallery-3.jpg" alt="Industrial visit to the Cargill plant in Rovigo, Italy" onerror="this.classList.add('missing')"><div class="ph"><span class="ic">[ IMG ]</span><small>assets/img/gallery-3.jpg</small></div></div></div>
+        <div class="slide"><div class="frame"><img src="assets/img/gallery-4.jpg" alt="University of Padova chemical engineering dinner" onerror="this.classList.add('missing')"><div class="ph"><span class="ic">[ IMG ]</span><small>assets/img/gallery-4.jpg</small></div></div></div>
+        <div class="slide"><div class="frame"><img src="assets/img/gallery-5.jpg" alt="Joining day at Carborundum Universal Limited" onerror="this.classList.add('missing')"><div class="ph"><span class="ic">[ IMG ]</span><small>assets/img/gallery-5.jpg</small></div></div></div>
+        <div class="slide"><div class="frame"><img src="assets/img/gallery-6.jpg" alt="Promotion from Graduate Engineer Trainee to Executive at CUMI" onerror="this.classList.add('missing')"><div class="ph"><span class="ic">[ IMG ]</span><small>assets/img/gallery-6.jpg</small></div></div></div>
+        <div class="slide"><div class="frame"><img src="assets/img/gallery-7.jpg" alt="Chemical engineering bachelor's graduation day at SASTRA" onerror="this.classList.add('missing')"><div class="ph"><span class="ic">[ IMG ]</span><small>assets/img/gallery-7.jpg</small></div></div></div>
+        <div class="slide"><div class="frame"><img src="assets/img/gallery-8.jpg" alt="Chemical engineering Class of 2018–2022, SASTRA University" onerror="this.classList.add('missing')"><div class="ph"><span class="ic">[ IMG ]</span><small>assets/img/gallery-8.jpg</small></div></div></div>
+      </div>
+      <div class="carousel-cap"><div class="ix" id="carIx">01 / 08</div><p id="carCap">Trekking during the Erasmus+ BIP, Kaiserslautern, Germany.</p></div>
+    </div>
+    <div class="car-dots" id="carDots"></div>
+    <div class="cert-note">Certificates (PDF)</div>
+    <div class="cert-grid">
+      <a class="cert reveal" href="assets/docs/certs/lean-six-sigma.pdf" target="_blank" rel="noopener"><span class="doc">PDF</span><span class="meta"><h4>Lean Six Sigma Yellow Belt (ISYB)</h4><span>Anexas Europe · Jul 2020</span></span><span class="go">↗</span></a>
+      <a class="cert reveal d1" href="assets/docs/certs/oil-gas-duke.pdf" target="_blank" rel="noopener"><span class="doc">PDF</span><span class="meta"><h4>Oil &amp; Gas Operations &amp; Markets</h4><span>Duke University · Coursera</span></span><span class="go">↗</span></a>
+      <a class="cert reveal" href="assets/docs/certs/solidworks.pdf" target="_blank" rel="noopener"><span class="doc">PDF</span><span class="meta"><h4>Design Engineer — SolidWorks</h4><span>EDST e-Learning · Aug 2020</span></span><span class="go">↗</span></a>
+      <a class="cert reveal d1" href="assets/docs/certs/negotiation.pdf" target="_blank" rel="noopener"><span class="doc">PDF</span><span class="meta"><h4>Successful Negotiation</h4><span>University of Michigan · Coursera</span></span><span class="go">↗</span></a>
+      <a class="cert reveal" href="assets/docs/certs/leadership-ei.pdf" target="_blank" rel="noopener"><span class="doc">PDF</span><span class="meta"><h4>Leadership &amp; Emotional Intelligence</h4><span>Indian School of Business · Coursera</span></span><span class="go">↗</span></a>
+      <a class="cert reveal d1" href="assets/docs/certs/soft-skills.pdf" target="_blank" rel="noopener"><span class="doc">PDF</span><span class="meta"><h4>Developing Soft Skills &amp; Personality</h4><span>IIT Kanpur · NPTEL</span></span><span class="go">↗</span></a>
+      <a class="cert reveal" href="assets/docs/certs/employment-comm.pdf" target="_blank" rel="noopener"><span class="doc">PDF</span><span class="meta"><h4>Employment Communication</h4><span>IIT Kharagpur · NPTEL</span></span><span class="go">↗</span></a>
+      <a class="cert reveal d1" href="assets/docs/certs/schemcon-2021.pdf" target="_blank" rel="noopener"><span class="doc">PDF</span><span class="meta"><h4>SCHEMCON 2021 — CFD paper</h4><span>IIChE · Sep 2021</span></span><span class="go">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== BEYOND ====================== -->
+<section class="section" id="beyond">
+  <div class="wrap">
+    <div class="section-head reveal"><div class="eyebrow">BY-07 · Off the flowsheet</div><h2>Beyond engineering</h2><p>The design, community and curiosity that keep the technical work human.</p></div>
+    <div class="beyond-grid">
+      <div class="beyond-card reveal"><h3>Design &amp; the visual side</h3><div class="sub">Illustrator · Photoshop · Premiere Pro</div><p>I design graphics and edit video — the same posters and certificates I made for my university's chemical-engineering conference, and the award-winning theme video at CUMI. Communicating technical ideas clearly is its own craft.</p></div>
+      <div class="beyond-card reveal d1"><h3>Community work</h3><div class="sub">Satyanarayana Trust · Apr 2019</div><p>Volunteered at an old-age home: helped establish a new clinic, reorganised the library, and ran computer-literacy sessions for elderly residents.</p></div>
+      <div class="beyond-card reveal" style="grid-column:1/-1"><h3>Recreational interests</h3><div class="sub">What I do away from the screen</div><div class="interest-row"><span class="ir">Cricket</span><span class="ir">Chess</span><span class="ir">Competitive esports</span><span class="ir">Technology reading</span><span class="ir">Graphic design</span><span class="ir">Video editing</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== CONTACT ====================== -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-card reveal">
+      <div class="eyebrow" style="justify-content:center">CN-08 · Product outlet</div>
+      <h2 style="margin-top:18px">Let's build something that <span class="accent">converges</span>.</h2>
+      <p>I'm open to process-engineering roles across the European process industry — and always happy to talk shop about distillation, CFD or lean.</p>
+      <div class="contact-actions">
+        <a href="mailto:ak9962851601@gmail.com" class="btn btn-primary">Email me →</a>
+        <a href="https://www.linkedin.com/in/akash-chemical/" class="btn btn-ghost" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div class="contact-meta">
+        <a href="mailto:ak9962851601@gmail.com">✉ ak9962851601@gmail.com</a>
+        <a href="tel:+393514184915">☎ +39 351 418 4915</a>
+        <a href="https://www.linkedin.com/in/akash-chemical/" target="_blank" rel="noopener">in · akash-chemical</a>
+        <span>◷ Padova, Italy (CET)</span>
+      </div>
+      <div class="docs-note">
+        <span style="color:var(--ink-faint)">Documents:</span>
+        <a href="assets/docs/Akash-CV.pdf" target="_blank" rel="noopener">Detailed CV (PDF)</a>
+        <a href="assets/docs/Akash-Resume.pdf" target="_blank" rel="noopener">One-page résumé</a>
+        <a href="assets/docs/Akash-Europass.pdf" target="_blank" rel="noopener">Europass CV</a>
+      </div>
+    </div>
+  </div>
+  <footer class="foot">
+    <div class="wrap foot-inner">
+      <p class="copy">© 2024–2026 Akash Suriya Narayanan. All rights reserved.<br>Designed as a process flowsheet — built with HTML, CSS &amp; a little chemical-engineering affection.</p>
+      <a href="#top" class="up">↑ Back to top</a>
+    </div>
+  </footer>
+</section>
+
+<script>
+(function(){
+  "use strict";
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* nav scrolled state */
+  var nav=document.getElementById('nav');
+  function onScroll(){ nav.classList.toggle('scrolled', window.scrollY>12); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  /* mobile menu */
+  var burger=document.getElementById('burger'), links=document.getElementById('navlinks');
+  burger.addEventListener('click',function(){ var o=links.classList.toggle('open'); burger.setAttribute('aria-expanded',o?'true':'false'); });
+  links.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',function(){ links.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }); });
+
+  /* scroll reveal */
+  var reveals=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window && !reduce){
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+    reveals.forEach(function(el){ io.observe(el); });
+  } else { reveals.forEach(function(el){ el.classList.add('in'); }); }
+
+  /* language bars */
+  var fills=document.querySelectorAll('.lang-bar .fill');
+  if('IntersectionObserver' in window){
+    var bio=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.style.width=e.target.getAttribute('data-w'); bio.unobserve(e.target);} }); },{threshold:0.5});
+    fills.forEach(function(f){ bio.observe(f); });
+  } else { fills.forEach(function(f){ f.style.width=f.getAttribute('data-w'); }); }
+
+  /* active nav link */
+  var ids=['about','education','experience','projects','skills','recognition','gallery','beyond','contact'];
+  var anchors={}; links.querySelectorAll('a').forEach(function(a){ anchors[a.getAttribute('href').replace('#','')]=a; });
+  var spy=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ Object.keys(anchors).forEach(function(k){ anchors[k].classList.remove('active'); }); if(anchors[e.target.id]) anchors[e.target.id].classList.add('active'); } }); },{threshold:0.2,rootMargin:'-30% 0px -55% 0px'});
+  ids.forEach(function(id){ var el=document.getElementById(id); if(el) spy.observe(el); });
+
+  /* project filter */
+  var fw=document.getElementById('projFilter'), cards=document.querySelectorAll('#projGrid .proj-card');
+  fw.addEventListener('click',function(ev){ var b=ev.target.closest('button'); if(!b) return; fw.querySelectorAll('button').forEach(function(x){x.classList.remove('active');}); b.classList.add('active'); var f=b.getAttribute('data-f'); cards.forEach(function(c){ var cats=c.getAttribute('data-cat')||''; c.style.display=(f==='all'||cats.split(' ').indexOf(f)!==-1)?'':'none'; }); });
+
+  /* carousel */
+  var track=document.getElementById('carTrack'), slides=track?track.children.length:0;
+  if(slides){
+    var idx=0;
+    var caps=[
+      "Trekking during the Erasmus+ BIP, Kaiserslautern, Germany.",
+      "Industrial visit to the BASF Ludwigshafen Verbund site.",
+      "Industrial visit to the Cargill plant in Rovigo, Italy.",
+      "University of Padova chemical engineering dinner.",
+      "Joining day at Carborundum Universal Limited.",
+      "Promotion from Graduate Engineer Trainee to Executive, CUMI.",
+      "Chemical engineering bachelor's graduation day, SASTRA.",
+      "Chemical engineering, Class of 2018–2022, SASTRA University."
+    ];
+    var capEl=document.getElementById('carCap'), ixEl=document.getElementById('carIx'), dw=document.getElementById('carDots');
+    for(var i=0;i<slides;i++){ (function(n){ var d=document.createElement('button'); d.setAttribute('aria-label','Go to slide '+(n+1)); d.addEventListener('click',function(){ idx=n; render(); }); dw.appendChild(d); })(i); }
+    var dots=dw.children;
+    function pad(n){ return (n<10?'0':'')+n; }
+    function render(){ track.style.transform='translateX('+(-idx*100)+'%)'; if(capEl&&caps[idx]) capEl.textContent=caps[idx]; if(ixEl) ixEl.textContent=pad(idx+1)+' / '+pad(slides); for(var j=0;j<dots.length;j++){ dots[j].classList.toggle('active',j===idx); } }
+    document.getElementById('carPrev').addEventListener('click',function(){ idx=(idx-1+slides)%slides; render(); });
+    document.getElementById('carNext').addEventListener('click',function(){ idx=(idx+1)%slides; render(); });
+    render();
+  }
+
+  /* per-section view tracking (logged as GoatCounter events, once each) */
+  if('IntersectionObserver' in window){
+    var seen={};
+    var sx=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting && !seen[e.target.id]){
+          seen[e.target.id]=true;
+          if(window.goatcounter && window.goatcounter.count){
+            window.goatcounter.count({ path:'section/'+e.target.id, title:'Section: '+e.target.id, event:true });
+          }
+        }
+      });
+    },{threshold:0.4});
+    ['about','education','experience','projects','skills','recognition','gallery','beyond','contact'].forEach(function(id){
+      var el=document.getElementById(id); if(el) sx.observe(el);
+    });
+  }
+})();
+</script>
+</body>
+</html>
