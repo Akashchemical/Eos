@@ -13,6 +13,15 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; img-src 'self' data: https://akasheos.goatcounter.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://gc.zgo.at; connect-src 'self' https://akasheos.goatcounter.com">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 
+<!-- Apply saved theme before paint (falls back to system preference) -->
+<script>
+  (function(){try{
+    var t=localStorage.getItem('theme');
+    if(!t){t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches)?'light':'dark';}
+    if(t==='light'){document.documentElement.classList.add('light');}
+  }catch(e){}})();
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -30,7 +39,30 @@
   --font-body:"Hanken Grotesk",system-ui,sans-serif;
   --font-mono:"IBM Plex Mono",ui-monospace,monospace;
   --maxw:1180px; --ease:cubic-bezier(0.22,1,0.36,1);
+  --svg-line:rgba(234,242,243,0.18);
 }
+/* ====================== LIGHT THEME ====================== */
+html.light{
+  --bg:#F3F6F7; --bg-2:#FFFFFF; --bg-3:#E9F0F2;
+  --ink:#0C2530; --ink-dim:#42606C; --ink-faint:#6C8893;
+  --copper:#BC6A2C; --copper-br:#9A5320;
+  --teal:#0E7B80; --teal-dim:#9ECBCE;
+  --line:rgba(12,37,48,0.12); --line-2:rgba(12,37,48,0.20);
+  --grid:rgba(14,123,128,0.05);
+  --svg-line:rgba(12,37,48,0.32);
+}
+html.light header.nav{background:rgba(243,246,247,0.80)}
+html.light header.nav.scrolled{background:rgba(243,246,247,0.93)}
+/* diagram connector lines follow the theme */
+.dl{stroke:var(--svg-line)}
+/* theme toggle */
+.nav-right{display:flex;align-items:center;gap:10px}
+.theme-btn{display:flex;align-items:center;justify-content:center;width:42px;height:38px;flex-shrink:0;background:none;border:1px solid var(--line-2);border-radius:7px;color:var(--ink-dim);cursor:pointer;transition:color .25s,border-color .25s}
+.theme-btn:hover{color:var(--copper);border-color:var(--copper)}
+.theme-btn svg{width:18px;height:18px}
+.theme-btn .ic-moon{display:none}
+html.light .theme-btn .ic-sun{display:none}
+html.light .theme-btn .ic-moon{display:block}
 /* ====================== BASE ====================== */
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -322,7 +354,13 @@ footer.foot{padding:60px 0 50px;margin-top:90px;border-top:1px solid var(--line)
       <a href="#beyond">Beyond</a>
       <a href="#contact" class="nav-cta">Get in touch</a>
     </nav>
-    <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <div class="nav-right">
+      <button class="theme-btn" id="themeToggle" aria-label="Switch between dark and light mode" title="Switch theme">
+        <svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.5 12H2.1M21.9 12h-2.4M5.4 5.4 7.1 7.1M16.9 16.9l1.7 1.7M18.6 5.4l-1.7 1.7M7.1 16.9l-1.7 1.7"/></svg>
+        <svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.3 6.3 0 0 0 10.5 10.5z"/></svg>
+      </button>
+      <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
   </div>
 </header>
 
@@ -358,8 +396,8 @@ footer.foot{padding:60px 0 50px;margin-top:90px;border-top:1px solid var(--line)
         </defs>
         <rect x="118" y="14" width="64" height="22" rx="5" fill="none" stroke="#58C5C9" stroke-width="1.6"/>
         <path d="M124 25 h52 M124 20 q6 5 12 0 q6 -5 12 0 q6 5 12 0 q6 -5 12 0" fill="none" stroke="#58C5C9" stroke-width="1.2" opacity="0.8"/>
-        <line x1="150" y1="36" x2="150" y2="58" stroke="rgba(234,242,243,0.18)" stroke-width="1.4"/>
-        <rect x="110" y="58" width="80" height="300" rx="40" fill="url(#shell)" stroke="rgba(234,242,243,0.18)" stroke-width="1.6"/>
+        <line x1="150" y1="36" x2="150" y2="58" class="dl" stroke="rgba(234,242,243,0.18)" stroke-width="1.4"/>
+        <rect x="110" y="58" width="80" height="300" rx="40" fill="url(#shell)" class="dl" stroke="rgba(234,242,243,0.18)" stroke-width="1.6"/>
         <g stroke="#3C6675" stroke-width="1.3" opacity="0.9">
           <line x1="116" y1="100" x2="184" y2="100"/><line x1="116" y1="140" x2="184" y2="140"/><line x1="116" y1="180" x2="184" y2="180"/>
           <line x1="116" y1="220" x2="184" y2="220"/><line x1="116" y1="260" x2="184" y2="260"/><line x1="116" y1="300" x2="184" y2="300"/>
@@ -371,17 +409,17 @@ footer.foot{padding:60px 0 50px;margin-top:90px;border-top:1px solid var(--line)
         <g fill="#58C5C9">
           <circle class="liquid" cx="128" cy="100" r="2.6" style="animation-delay:.4s"/><circle class="liquid" cx="172" cy="100" r="2.6" style="animation-delay:1.1s"/><circle class="liquid" cx="150" cy="100" r="2.4" style="animation-delay:1.8s"/>
         </g>
-        <line x1="60" y1="208" x2="110" y2="208" stroke="rgba(234,242,243,0.18)" stroke-width="1.4"/>
+        <line x1="60" y1="208" x2="110" y2="208" class="dl" stroke="rgba(234,242,243,0.18)" stroke-width="1.4"/>
         <polygon points="110,208 103,204 103,212" fill="#9DB4BD"/>
         <g fill="#F4B070"><circle class="stream-flow" cx="64" cy="208" r="2.4"/></g>
         <text x="58" y="200" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9" fill="#5E7A85">FEED</text>
-        <line x1="190" y1="25" x2="240" y2="25" stroke="rgba(234,242,243,0.18)" stroke-width="1.4"/>
+        <line x1="190" y1="25" x2="240" y2="25" class="dl" stroke="rgba(234,242,243,0.18)" stroke-width="1.4"/>
         <polygon points="240,25 233,21 233,29" fill="#9DB4BD"/>
         <text x="244" y="29" font-family="IBM Plex Mono, monospace" font-size="9" fill="#5E7A85">DISTILLATE</text>
-        <line x1="150" y1="358" x2="150" y2="380" stroke="rgba(234,242,243,0.18)" stroke-width="1.4"/>
+        <line x1="150" y1="358" x2="150" y2="380" class="dl" stroke="rgba(234,242,243,0.18)" stroke-width="1.4"/>
         <circle cx="150" cy="398" r="20" fill="none" stroke="#E89A5C" stroke-width="1.6"/>
         <path d="M138 398 q6 -8 12 0 q6 8 12 0" fill="none" stroke="#E89A5C" stroke-width="1.3" class="glow"/>
-        <line x1="170" y1="398" x2="240" y2="398" stroke="rgba(234,242,243,0.18)" stroke-width="1.4"/>
+        <line x1="170" y1="398" x2="240" y2="398" class="dl" stroke="rgba(234,242,243,0.18)" stroke-width="1.4"/>
         <polygon points="240,398 233,394 233,402" fill="#9DB4BD"/>
         <text x="244" y="402" font-family="IBM Plex Mono, monospace" font-size="9" fill="#5E7A85">BOTTOMS</text>
         <circle cx="60" cy="80" r="17" fill="none" stroke="#58C5C9" stroke-width="1.2"/>
@@ -790,6 +828,15 @@ footer.foot{padding:60px 0 50px;margin-top:90px;border-top:1px solid var(--line)
     },{threshold:0.4});
     ['about','education','experience','projects','skills','recognition','gallery','beyond','contact'].forEach(function(id){
       var el=document.getElementById(id); if(el) sx.observe(el);
+    });
+  }
+
+  /* dark / light theme toggle */
+  var tBtn=document.getElementById('themeToggle');
+  if(tBtn){
+    tBtn.addEventListener('click',function(){
+      var isLight=document.documentElement.classList.toggle('light');
+      try{ localStorage.setItem('theme', isLight?'light':'dark'); }catch(e){}
     });
   }
 })();
